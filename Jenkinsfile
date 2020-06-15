@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Unit Tests') {
            steps {
-                sh 'mvn test'
+                shell 'mvn test'
            }
         }
         // stage ('Deploy Backend') {
