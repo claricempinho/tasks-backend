@@ -38,6 +38,15 @@ pipeline {
                      }
               }
         }
+            stage ('Functional Test') {
+               steps {
+                   dir('functional-test'){
+                       git credentialsId: 'GitHubLogin', url: 'https://github.com/claricempinho/tasks-functional-test'
+                       shell 'mvn test'
+                   }
+
+                }
+            }
     }
 }
 
